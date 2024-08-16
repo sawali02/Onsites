@@ -1,0 +1,31 @@
+Site Monitoring Tool 
+
+
+In the VSC  create a new file of type python, and write the code to request the websites 
+
+1.Import Requests Library: The requests library is used to send HTTP requests.
+
+2.Define check_website_status Function:
+
+           Takes a list of URLs.
+            Sends GET requests to each URL.
+            Checks the status code of the response.
+            Updates the status report based on whether the website is up or down, or if an error occurs.
+  
+
+3.Define display_status Function:
+ 
+        Takes the status report dictionary and prints each website's status.
+   
+
+
+4.Main Execution Block:
+
+       List of websites to monitor.
+       Calls the functions to check the status and display the results.
+
+
+For Running the Script 
+
+        We need to install requests library. By using the command 'pip install requests'.
+After saving the script running the program by using command 'python networking.py'.

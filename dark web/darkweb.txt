@@ -1,0 +1,70 @@
+ SUBTASK 1 : 
+
+
+Launch Wireshark: Open Wireshark to capture traffic.
+Selecting the Network Interface: Choose the network interface that my computer uses to connect to the internet which is wifi
+Start Capture: Click on the network interface and then click on the blue shark fin icon to start capturing packets.
+ Generate Traffic with Tor Browser
+Launch Tor Browser: Open the Tor Browser and browse a few websites to generate traffic.
+ Analyze Tor Traffic in Wireshark
+Stop the Capture: After browsing for a few minutes, go back to Wireshark and click the red square icon to stop capturing packets.
+Filter Tor Traffic: Use Wireshark’s display filter to narrow down the traffic to Tor-related packets. You can filter by:
+TLS/SSL: Tor traffic is encrypted, so we can filter for encrypted traffic with tls or ssl.
+ Observing Differences
+Encrypted Traffic: Notice that Tor traffic is encrypted, which is indicated by the TLS protocol. Regular web traffic (e.g., browsing without Tor) might not be encrypted unless you’re using HTTPS.
+Circuit Routing: You can also observe multiple hops or connections in Tor traffic, reflecting how Tor routes traffic through several relays to anonymize it.
+
+SUBTASK 3 :
+
+Encryption
+
+End-to-End Encryption: Tor encrypts data multiple times as it passes through a series of network nodes (relays). Each relay decrypts only one layer, revealing the next relay in the circuit, but not the original source or final destination.
+Layered Encryption (Onion Routing): Data is encapsulated in multiple layers of encryption, much like the layers of an onion, with each layer decrypted by a successive relay until the final relay (exit node) decrypts the innermost layer and sends the original data to its destination.
+
+Anonymity
+
+Randomized Path Selection: Tor uses a randomized path through a series of three or more relays (entry, middle, and exit) to obscure the user's IP address and location, preventing adversaries from easily tracking users’ activities.
+No Single Relay Knows the Entire Path: Each relay in the Tor network only knows the IP address of the previous and next nodes, not the entire route or the identity of the user. This makes it difficult for any single relay to determine both the origin and destination of the data.
+
+
+Perfect Forward Secrecy (PFS)
+Ephemeral Keys: Tor employs ephemeral keys for each session, which means even if a long-term key is compromised, past communications cannot be decrypted. Each session uses a new key, and once the session is over, the key is discarded.
+
+
+2. Importance of Using HTTPS with Tor
+While Tor provides anonymity and encryption within the Tor network, the data becomes unencrypted when it exits the Tor network at the exit relay. Using HTTPS in conjunction with Tor ensures that data remains encrypted end-to-end from the user's browser to the destination server, providing:
+
+Confidentiality: Prevents eavesdropping by malicious exit nodes or man-in-the-middle attackers.
+Integrity: Protects against data tampering during transit.
+Authentication: Verifies the identity of the website you are connecting to, reducing the risk of connecting to a spoofed or fraudulent site.
+
+
+
+3.best security practices
+resource - https://www.torproject.org/
+
+
+BLOCK TRACKERS
+Tor Browser isolates each website you visit so third-party trackers and ads can't follow you. Any cookies automatically clear when you're done browsing. So will your browsing history.
+
+DEFEND AGAINST SURVEILLANCE
+Tor Browser prevents someone watching your connection from knowing what websites you visit. All anyone monitoring your browsing habits can see is that you're using Tor.
+
+
+RESIST FINGERPRINTING
+Tor Browser aims to make all users look the same, making it difficult for you to be fingerprinted based on your browser and device information.
+
+
+MULTI-LAYERED ENCRYPTION
+Your traffic is relayed and encrypted three times as it passes over the Tor network. The network is comprised of thousands of volunteer-run servers known as Tor relays.
+
+
+SUBTASK 5
+
+ Experiment with Tor's Command-Line Interface (CLI)
+
+resource- https://spec.torproject.org/control-spec/commands.html
+
+
+Starting Tor: Simply run the tor command in the terminal.
+Stopping Tor: we can stop Tor by simply running the command killall tor
